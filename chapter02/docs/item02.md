@@ -1,7 +1,7 @@
 # Item 2. 생성자에 매개변수가 많다면 빌더를 고려하라
 
 > 💡 **핵심 요약**: 매개변수가 많은 클래스의 생성자나 정적 팩터리는 빌더 패턴을 고려하라
-> 
+>
 > 🎯 **적용 시기**: 매개변수가 4개 이상이거나, 선택적 매개변수가 많을 때
 
 ---
@@ -67,6 +67,8 @@ public class NutritionFacts {
 }
 ```
 
+> 💻 **코드**: `telescopingconstructor/NutritionFacts.java`
+
 ### 사용
 
 ```java
@@ -74,8 +76,6 @@ NutritionFacts cocaCola = new NutritionFacts(240, 8, 100, 0, 35, 27);
 //                                                        ↑
 //                                              fat을 0으로 명시해야 함
 ```
-
-**실행 가능한 코드**: [`src/.../telescopingconstructor/NutritionFacts.java`](../src/main/java/effectivejava/chapter2/item02/telescopingconstructor/NutritionFacts.java)
 
 ### 🚨 단점
 
@@ -95,8 +95,6 @@ NutritionFacts mistake = new NutritionFacts(240, 8, 0, 100, 35, 27);
 //                                                    ↑   ↑
 //                                        버그! but 컴파일 성공
 ```
-
-타입이 같은 매개변수가 연달아 나열되면 **찾기 어려운 버그**로 이어진다.
 
 #### 3. **원하지 않는 매개변수에도 값을 지정해야 한다**
 
@@ -132,6 +130,8 @@ public class NutritionFacts {
 }
 ```
 
+> 💻 **코드**: `javabean/NutritionFacts.java`
+
 ### 사용
 
 ```java
@@ -142,8 +142,6 @@ cocaCola.setCalories(100);
 cocaCola.setSodium(35);
 cocaCola.setCarbohydrate(27);
 ```
-
-**실행 가능한 코드**: [`src/.../javabean/NutritionFacts.java`](../src/main/java/effectivejava/chapter2/item02/javabean/NutritionFacts.java)
 
 ### ✅ 장점
 
@@ -168,8 +166,6 @@ cocaCola.setServings(8);
 
 여러 번의 메서드 호출로 나누어져 인스턴스가 생성되므로, **생성 과정을 거치는 동안 자바빈 객체가 일관된 상태를 유지하지 못할 수 있다**.
 
-객체 생성이 완전하게 끝났을 때 그 객체를 동결하고 완전하게 되기 전까지는 사용할 수 없도록 하는 방법도 있지만, **적용이 어려워 거의 사용되지 않는다**.
-
 #### 2. **불변 클래스로 만들 수 없다**
 
 ```java
@@ -184,17 +180,7 @@ public final class NutritionFacts {
 - 스레드 안전성 보장 불가
 - 예측 가능성 저하
 
-#### 3. **스레드 안전성**
-
-```java
-// 스레드 A
-NutritionFacts facts = new NutritionFacts();
-facts.setServingSize(240);
-// ← 이 사이에 스레드 B가 facts를 읽으면?
-
-// 스레드 B
-int size = facts.getServingSize(); // 240? 아직 설정 중?
-```
+#### 3. **스레드 안전성 문제**
 
 thread에서 안전성을 유지하려면 **프로그래머의 추가적인 노력**이 필요하다.
 
@@ -256,6 +242,8 @@ public class NutritionFacts {
 }
 ```
 
+> 💻 **코드**: `builder/NutritionFacts.java`
+
 ### 사용
 
 ```java
@@ -265,8 +253,6 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8)
         .carbohydrate(27)
         .build();
 ```
-
-**실행 가능한 코드**: [`src/.../builder/NutritionFacts.java`](../src/main/java/effectivejava/chapter2/item02/builder/NutritionFacts.java)
 
 ### 빌더 패턴 사용 과정
 
@@ -317,8 +303,6 @@ public NutritionFacts build() {
 - 매개변수에 따라 다른 객체를 만드는 등 유연하게 사용 가능
 - 여러 개의 가변인자 매개변수를 가질 수 있다
 
-#### 5. **매개변수들의 값이 설정된 빌더는 훌륭한 추상 팩토리를 만든다**
-
 ### ⚠️ 단점
 
 #### 1. **성능이 매우 중요한 상황에서는 문제가 될 수 있다**
@@ -344,98 +328,11 @@ public NutritionFacts build() {
 
 추상 클래스에는 추상 빌더를, 구체 클래스에는 구체 빌더를 작성한다.
 
-#### Pizza 추상 클래스
-
-```java
-public abstract class Pizza {
-    public enum Topping { HAM, MUSHROOM, ONION, PEPPER, SAUSAGE }
-    final Set<Topping> toppings;
-
-    // 재귀적 타입 한정(recursive type bound) 사용
-    abstract static class Builder<T extends Builder<T>> {
-        EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class);
-        
-        public T addTopping(Topping topping) {
-            toppings.add(Objects.requireNonNull(topping));
-            return self();  // 핵심: self()를 통해 실제 타입 반환
-        }
-
-        abstract Pizza build();
-
-        // "시뮬레이트한 셀프 타입" 관용구
-        // 하위 클래스에서 this를 반환하도록 구현
-        protected abstract T self();
-    }
-    
-    Pizza(Builder<?> builder) {
-        toppings = builder.toppings.clone();
-    }
-}
-```
-
-#### NyPizza 구체 클래스
-
-```java
-public class NyPizza extends Pizza {
-    public enum Size { SMALL, MEDIUM, LARGE }
-    private final Size size;
-
-    public static class Builder extends Pizza.Builder<Builder> {
-        private final Size size;
-
-        public Builder(Size size) {
-            this.size = Objects.requireNonNull(size);
-        }
-
-        @Override 
-        public NyPizza build() {  // 공변 반환 타이핑
-            return new NyPizza(this);
-        }
-
-        @Override 
-        protected Builder self() { 
-            return this; 
-        }
-    }
-
-    private NyPizza(Builder builder) {
-        super(builder);
-        size = builder.size;
-    }
-}
-```
-
-#### Calzone 구체 클래스
-
-```java
-public class Calzone extends Pizza {
-    private final boolean sauceInside;
-
-    public static class Builder extends Pizza.Builder<Builder> {
-        private boolean sauceInside = false;
-
-        public Builder sauceInside() {
-            sauceInside = true;
-            return this;
-        }
-
-        @Override 
-        public Calzone build() {  // 공변 반환 타이핑
-            return new Calzone(this);
-        }
-
-        @Override 
-        protected Builder self() { 
-            return this; 
-        }
-    }
-
-    private Calzone(Builder builder) {
-        super(builder);
-        sauceInside = builder.sauceInside;
-    }
-}
-```
+> 💻 **코드**: `hierarchicalbuilder/` 폴더
+> - `Pizza.java` - 추상 피자 클래스
+> - `NyPizza.java` - 뉴욕 피자
+> - `Calzone.java` - 칼초네 피자
+> - `PizzaTest.java` - 실행 가능한 테스트
 
 ### 사용
 
@@ -451,12 +348,6 @@ Calzone calzone = new Calzone.Builder()
         .build();
 ```
 
-**실행 가능한 코드**: 
-- [`Pizza.java`](../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/Pizza.java)
-- [`NyPizza.java`](../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/NyPizza.java)
-- [`Calzone.java`](../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/Calzone.java)
-- [`PizzaTest.java`](../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/PizzaTest.java)
-
 ### 🎯 핵심 기법
 
 #### 1. 시뮬레이트한 셀프 타입 (Simulated Self-Type)
@@ -470,18 +361,6 @@ abstract static class Builder<T extends Builder<T>> {
 **왜 필요한가?**
 
 Java는 self 타입을 직접 지원하지 않으므로, 이렇게 우회해야 메서드 체이닝이 제대로 작동한다.
-
-```java
-// self()가 없다면?
-Pizza.Builder builder = new NyPizza.Builder(SMALL)
-        .addTopping(SAUSAGE);  // 반환: Pizza.Builder
-        // .size(LARGE);       // ❌ 컴파일 에러!
-
-// self()가 있다면?
-NyPizza.Builder builder = new NyPizza.Builder(SMALL)
-        .addTopping(SAUSAGE)   // 반환: NyPizza.Builder
-        .addTopping(ONION);    // ✅ 계속 체이닝 가능
-```
 
 #### 2. 공변 반환 타이핑 (Covariant Return Typing)
 
@@ -499,12 +378,6 @@ public NyPizza build() {  // Pizza가 아닌 NyPizza 반환!
 하위 클래스의 build() 메서드는 **구체 하위 클래스를 반환**하도록 선언한다.
 
 Java 5부터 지원: 하위 클래스 메서드가 상위 클래스보다 **구체적인 타입**을 반환 가능.
-
-**클라이언트가 형변환할 필요 없음**:
-
-```java
-NyPizza pizza = new NyPizza.Builder(SMALL).build();  // ✅ 형변환 불필요
-```
 
 ---
 
@@ -582,14 +455,10 @@ NutritionFactsLombok facts = NutritionFactsLombok.builder()
 ## 🔗 관련 아이템
 
 - **Item 1**: 생성자 대신 정적 팩터리 메서드를 고려하라
-  - 빌더 패턴과 정적 팩터리 메서드를 함께 사용 가능
 - **Item 3**: private 생성자나 열거 타입으로 싱글턴임을 보증하라
-  - 빌더 패턴에서 private 생성자 활용
 - **Item 17**: 변경 가능성을 최소화하라
-  - 빌더 패턴으로 불변 객체 생성
 - **Item 50**: 적시에 방어적 복사본을 만들어라
-  - 빌더 패턴에서 컬렉션 복사 시 활용
 
 ---
 
-**이전**: Item 1 | **다음**: Item 3 | **목차**: [Chapter 2 README](./README.md)
+**이전**: Item 1 | **다음**: Item 3 | **목차**: [Chapter 2 README](../README.md)
