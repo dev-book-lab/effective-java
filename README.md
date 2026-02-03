@@ -1,8 +1,9 @@
 <div align="center">
-  <img src="images/cover.png" alt="effective-java" width="300" />
-</div>
 
-<div align="center">
+<img src="./images/cover.png" alt="Effective Java 3rd Edition" width="200"/>
+
+<br/>
+<br/>
 
 # 📚 Effective Java 3/E 완전 정복
 
@@ -13,7 +14,7 @@
 > *"단순한 요약을 넘어, 원리부터 파헤치는 이펙티브 자바 완전 가이드"*
 
 Joshua Bloch의 명저를 **실행 가능한 코드**와 **깊이 있는 분석**으로 재구성한  
-**Dev Book Lab**의 Effective Java 학습 자료
+**Dev Book Lab**의 Effective Java 3rd Edition 학습 자료
 
 <br/>
 
