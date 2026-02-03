@@ -356,8 +356,8 @@ Chapter 7, 8, 10, 11: 중요
 
 ## 🙏 Reference
 
-- [Effective Java 3/E (Joshua Bloch)](https://www.oreilly.com/library/view/effective-java/9780134686097/)
-- [Official Source Code](https://github.com/jbloch/effective-java-3e-source-code)
+- [Effective Java 3/E (Joshua Bloch)](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=171196410&srsltid=AfmBOooSXjSAshKBNNKry7rkSgXu0ZZEBkbmg-8nAhbxCS0mD9GZLxrK)
+- [Official Source Code](https://github.com/WegraLee/effective-java-3e-source-code)
 
 ---
 
