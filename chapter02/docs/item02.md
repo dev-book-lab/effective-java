@@ -456,8 +456,8 @@ NutritionFactsLombok facts = NutritionFactsLombok.builder()
 
 - **[Item 1](./item01.md)**: 생성자 대신 정적 팩터리 메서드를 고려하라
 - **[Item 3](./item03.md)**: private 생성자나 열거 타입으로 싱글턴임을 보증하라
-- **Item 17**: 변경 가능성을 최소화하라
-- **Item 50**: 적시에 방어적 복사본을 만들어라
+- **[Item 17](../../chapter04/docs/item17.md)**: 변경 가능성을 최소화하라
+- **[Item 50](../../chapter08/docs/item50.md)**: 적시에 방어적 복사본을 만들어라
 
 ---
 
