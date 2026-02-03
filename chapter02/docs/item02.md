@@ -67,7 +67,7 @@ public class NutritionFacts {
 }
 ```
 
-> 💻 **코드**: `telescopingconstructor/NutritionFacts.java`
+> 💻 **코드**: [`telescopingconstructor/NutritionFacts.java`](../../src/main/java/effectivejava/chapter2/item02/telescopingconstructor/NutritionFacts.java)
 
 ### 사용
 
@@ -130,7 +130,7 @@ public class NutritionFacts {
 }
 ```
 
-> 💻 **코드**: `javabean/NutritionFacts.java`
+> 💻 **코드**: [`javabean/NutritionFacts.java`](../../src/main/java/effectivejava/chapter2/item02/javabean/NutritionFacts.java)
 
 ### 사용
 
@@ -242,7 +242,7 @@ public class NutritionFacts {
 }
 ```
 
-> 💻 **코드**: `builder/NutritionFacts.java`
+> 💻 **코드**: [`builder/NutritionFacts.java`](../../src/main/java/effectivejava/chapter2/item02/builder/NutritionFacts.java)
 
 ### 사용
 
@@ -328,11 +328,11 @@ public NutritionFacts build() {
 
 추상 클래스에는 추상 빌더를, 구체 클래스에는 구체 빌더를 작성한다.
 
-> 💻 **코드**: `hierarchicalbuilder/` 폴더
-> - `Pizza.java` - 추상 피자 클래스
-> - `NyPizza.java` - 뉴욕 피자
-> - `Calzone.java` - 칼초네 피자
-> - `PizzaTest.java` - 실행 가능한 테스트
+> 💻 **코드**:
+> - [`Pizza.java`](../../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/Pizza.java) - 추상 피자 클래스
+> - [`NyPizza.java`](../../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/NyPizza.java) - 뉴욕 피자
+> - [`Calzone.java`](../../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/Calzone.java) - 칼초네 피자
+> - [`PizzaTest.java`](../../src/main/java/effectivejava/chapter2/item02/hierarchicalbuilder/PizzaTest.java) - 실행 가능한 테스트
 
 ### 사용
 
@@ -454,11 +454,11 @@ NutritionFactsLombok facts = NutritionFactsLombok.builder()
 
 ## 🔗 관련 아이템
 
-- **Item 1**: 생성자 대신 정적 팩터리 메서드를 고려하라
-- **Item 3**: private 생성자나 열거 타입으로 싱글턴임을 보증하라
+- **[Item 1](./item01.md)**: 생성자 대신 정적 팩터리 메서드를 고려하라
+- **[Item 3](./item03.md)**: private 생성자나 열거 타입으로 싱글턴임을 보증하라
 - **Item 17**: 변경 가능성을 최소화하라
 - **Item 50**: 적시에 방어적 복사본을 만들어라
 
 ---
 
-**이전**: Item 1 | **다음**: Item 3 | **목차**: [Chapter 2 README](../README.md)
+**이전**: [Item 1](./item01.md) | **다음**: [Item 3](./item03.md) | **목차**: [Chapter 2 README](../README.md)
