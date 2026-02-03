@@ -16,37 +16,30 @@ Joshua Bloch의 명저를 **실행 가능한 코드**와 **깊이 있는 분석*
 [![GitHub](https://img.shields.io/badge/GitHub-dev--book--lab-181717?style=flat-square&logo=github)](https://github.com/dev-book-lab)
 [![Java](https://img.shields.io/badge/Java-21-orange?style=flat-square&logo=openjdk)](https://www.java.com)
 [![Items](https://img.shields.io/badge/Items-90개-blue?style=flat-square&logo=readthedocs&logoColor=white)](./README.md)
-[![Progress](https://img.shields.io/badge/Progress-1%2F90-green?style=flat-square&logo=progress&logoColor=white)](./README.md)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square&logo=opensourceinitiative&logoColor=white)](./LICENSE)
 
 </div>
 
 ---
 
-## 🎯 이 프로젝트에 대하여
-
-단순한 책 요약이 아닌, **실전에서 바로 적용할 수 있는** Effective Java 학습 자료입니다.
-
-### ✨ 특징
+## 🎯 프로젝트 특징
 
 | 🎯 **문제 중심** | 💻 **실행 가능** | 🔥 **AI 분석** | 📊 **Before/After** |
 |:---:|:---:|:---:|:---:|
 | 왜 이렇게<br/>설계하는지부터 | 모든 Item은<br/>동작하는 코드로 | Claude와 함께<br/>깊이 파헤치기 | 패턴 적용<br/>전후 비교 |
 
-- ✅ **90개 Item 완전 분석** - Chapter 2부터 Chapter 12까지
-- ✅ **실행 가능한 예제** - 이론만이 아닌 실습 중심
-- ✅ **문제-해결 구조** - Item이 필요한 이유부터 명확히
-- ✅ **Before/After 비교** - 개선 전후 코드 비교
-- ✅ **AI 깊이 파기** - 근본 원리와 트레이드오프 분석
-
 ---
 
 ## 📚 목차
 
-> 💡 **각 챕터를 클릭하면 상세한 학습 가이드로 이동합니다**
+> 💡 **각 챕터를 클릭하여 펼쳐보세요**
 
-### [📖 Chapter 2. 객체 생성과 파괴](./chapter02/README.md)
-객체 생성과 파괴의 올바른 방법
+<details>
+<summary><b>📖 Chapter 2. 객체 생성과 파괴</b> (9개 Item)</summary>
+
+<br/>
+
+**주제**: 객체를 만들어야 할 때와 만들지 말아야 할 때를 구분하는 법
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -60,12 +53,18 @@ Joshua Bloch의 명저를 **실행 가능한 코드**와 **깊이 있는 분석*
 | **[Item 8](./chapter02/docs/item08.md)** | finalizer와 cleaner 사용을 피하라 | 📝 |
 | **[Item 9](./chapter02/docs/item09.md)** | try-finally보다는 try-with-resources를 사용하라 | 📝 |
 
-**진행률**: 1/9 (11%) | **핵심**: 정적 팩터리, 빌더, 싱글턴, DI, 자원 관리
+**핵심 키워드**: 정적 팩터리, 빌더, 싱글턴, DI, 자원 관리
 
----
+[📂 Chapter 2 상세 보기](./chapter02/README.md)
 
-### [📖 Chapter 3. 모든 객체의 공통 메서드](./chapter03/README.md)
-Object 메서드의 올바른 재정의
+</details>
+
+<details>
+<summary><b>📖 Chapter 3. 모든 객체의 공통 메서드</b> (5개 Item)</summary>
+
+<br/>
+
+**주제**: Object 메서드의 올바른 재정의
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -75,12 +74,18 @@ Object 메서드의 올바른 재정의
 | **[Item 13](./chapter03/docs/item13.md)** | clone 재정의는 주의해서 진행하라 | 📝 |
 | **[Item 14](./chapter03/docs/item14.md)** | Comparable을 구현할지 고려하라 | 📝 |
 
-**핵심**: equals/hashCode 규약, toString, clone, Comparable
+**핵심 키워드**: equals/hashCode 규약, toString, clone, Comparable
 
----
+[📂 Chapter 3 상세 보기](./chapter03/README.md)
 
-### [📖 Chapter 4. 클래스와 인터페이스](./chapter04/README.md)
-클래스와 인터페이스 설계의 핵심
+</details>
+
+<details>
+<summary><b>📖 Chapter 4. 클래스와 인터페이스</b> (11개 Item)</summary>
+
+<br/>
+
+**주제**: 클래스와 인터페이스 설계의 핵심
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -96,12 +101,18 @@ Object 메서드의 올바른 재정의
 | **[Item 24](./chapter04/docs/item24.md)** | 멤버 클래스는 되도록 static으로 만들라 | 📝 |
 | **[Item 25](./chapter04/docs/item25.md)** | 톱레벨 클래스는 한 파일에 하나만 담으라 | 📝 |
 
-**핵심**: 캡슐화, 불변성, 컴포지션, 인터페이스 우선
+**핵심 키워드**: 캡슐화, 불변성, 컴포지션, 인터페이스 우선
 
----
+[📂 Chapter 4 상세 보기](./chapter04/README.md)
 
-### [📖 Chapter 5. 제네릭](./chapter05/README.md)
-타입 안전성을 보장하는 제네릭
+</details>
+
+<details>
+<summary><b>📖 Chapter 5. 제네릭</b> (8개 Item)</summary>
+
+<br/>
+
+**주제**: 타입 안전성을 보장하는 제네릭
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -114,12 +125,18 @@ Object 메서드의 올바른 재정의
 | **[Item 32](./chapter05/docs/item32.md)** | 제네릭과 가변인수를 함께 쓸 때는 신중하라 | 📝 |
 | **[Item 33](./chapter05/docs/item33.md)** | 타입 안전 이종 컨테이너를 고려하라 | 📝 |
 
-**핵심**: 로 타입 금지, 와일드카드, PECS 원칙
+**핵심 키워드**: 로 타입 금지, 와일드카드, PECS 원칙
 
----
+[📂 Chapter 5 상세 보기](./chapter05/README.md)
 
-### [📖 Chapter 6. 열거 타입과 애너테이션](./chapter06/README.md)
-enum과 애너테이션의 올바른 사용
+</details>
+
+<details>
+<summary><b>📖 Chapter 6. 열거 타입과 애너테이션</b> (8개 Item)</summary>
+
+<br/>
+
+**주제**: enum과 애너테이션의 올바른 사용
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -132,12 +149,18 @@ enum과 애너테이션의 올바른 사용
 | **[Item 40](./chapter06/docs/item40.md)** | @Override 애너테이션을 일관되게 사용하라 | 📝 |
 | **[Item 41](./chapter06/docs/item41.md)** | 정의하려는 것이 타입이라면 마커 인터페이스를 사용하라 | 📝 |
 
-**핵심**: enum 활용, EnumSet/EnumMap, 애너테이션
+**핵심 키워드**: enum 활용, EnumSet/EnumMap, 애너테이션
 
----
+[📂 Chapter 6 상세 보기](./chapter06/README.md)
 
-### [📖 Chapter 7. 람다와 스트림](./chapter07/README.md)
-함수형 프로그래밍의 활용
+</details>
+
+<details>
+<summary><b>📖 Chapter 7. 람다와 스트림</b> (7개 Item)</summary>
+
+<br/>
+
+**주제**: 함수형 프로그래밍의 활용
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -149,12 +172,18 @@ enum과 애너테이션의 올바른 사용
 | **[Item 47](./chapter07/docs/item47.md)** | 반환 타입으로는 스트림보다 컬렉션이 낫다 | 📝 |
 | **[Item 48](./chapter07/docs/item48.md)** | 스트림 병렬화는 주의해서 적용하라 | 📝 |
 
-**핵심**: 람다, 메서드 참조, Stream API, 병렬 스트림
+**핵심 키워드**: 람다, 메서드 참조, Stream API, 병렬 스트림
 
----
+[📂 Chapter 7 상세 보기](./chapter07/README.md)
 
-### [📖 Chapter 8. 메서드](./chapter08/README.md)
-메서드 설계의 기본 원칙
+</details>
+
+<details>
+<summary><b>📖 Chapter 8. 메서드</b> (8개 Item)</summary>
+
+<br/>
+
+**주제**: 메서드 설계의 기본 원칙
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -167,12 +196,18 @@ enum과 애너테이션의 올바른 사용
 | **[Item 55](./chapter08/docs/item55.md)** | 옵셔널 반환은 신중히 하라 | 📝 |
 | **[Item 56](./chapter08/docs/item56.md)** | 공개된 API 요소에는 항상 문서화 주석을 작성하라 | 📝 |
 
-**핵심**: 유효성 검사, 방어적 복사, Optional, Javadoc
+**핵심 키워드**: 유효성 검사, 방어적 복사, Optional, Javadoc
 
----
+[📂 Chapter 8 상세 보기](./chapter08/README.md)
 
-### [📖 Chapter 9. 일반적인 프로그래밍 원칙](./chapter09/README.md)
-프로그래밍의 기본 원칙
+</details>
+
+<details>
+<summary><b>📖 Chapter 9. 일반적인 프로그래밍 원칙</b> (12개 Item)</summary>
+
+<br/>
+
+**주제**: 프로그래밍의 기본 원칙
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -189,12 +224,18 @@ enum과 애너테이션의 올바른 사용
 | **[Item 67](./chapter09/docs/item67.md)** | 최적화는 신중히 하라 | 📝 |
 | **[Item 68](./chapter09/docs/item68.md)** | 일반적으로 통용되는 명명 규칙을 따르라 | 📝 |
 
-**핵심**: 지역 변수, for-each, 라이브러리, 기본 타입, 최적화
+**핵심 키워드**: 지역 변수, for-each, 라이브러리, 기본 타입, 최적화
 
----
+[📂 Chapter 9 상세 보기](./chapter09/README.md)
 
-### [📖 Chapter 10. 예외](./chapter10/README.md)
-예외 처리의 모범 사례
+</details>
+
+<details>
+<summary><b>📖 Chapter 10. 예외</b> (9개 Item)</summary>
+
+<br/>
+
+**주제**: 예외 처리의 모범 사례
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -208,12 +249,18 @@ enum과 애너테이션의 올바른 사용
 | **[Item 76](./chapter10/docs/item76.md)** | 가능한 한 실패 원자적으로 만들라 | 📝 |
 | **[Item 77](./chapter10/docs/item77.md)** | 예외를 무시하지 말라 | 📝 |
 
-**핵심**: 검사 예외 vs 런타임 예외, 예외 번역, 실패 원자성
+**핵심 키워드**: 검사 예외 vs 런타임 예외, 예외 번역, 실패 원자성
 
----
+[📂 Chapter 10 상세 보기](./chapter10/README.md)
 
-### [📖 Chapter 11. 동시성](./chapter11/README.md)
-멀티스레드 프로그래밍
+</details>
+
+<details>
+<summary><b>📖 Chapter 11. 동시성</b> (7개 Item)</summary>
+
+<br/>
+
+**주제**: 멀티스레드 프로그래밍
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -225,12 +272,18 @@ enum과 애너테이션의 올바른 사용
 | **[Item 83](./chapter11/docs/item83.md)** | 지연 초기화는 신중히 사용하라 | 📝 |
 | **[Item 84](./chapter11/docs/item84.md)** | 프로그램의 동작을 스레드 스케줄러에 기대지 말라 | 📝 |
 
-**핵심**: 동기화, ExecutorService, 동시성 유틸리티
+**핵심 키워드**: 동기화, ExecutorService, 동시성 유틸리티
 
----
+[📂 Chapter 11 상세 보기](./chapter11/README.md)
 
-### [📖 Chapter 12. 직렬화](./chapter12/README.md)
-객체 직렬화의 함정
+</details>
+
+<details>
+<summary><b>📖 Chapter 12. 직렬화</b> (6개 Item)</summary>
+
+<br/>
+
+**주제**: 객체 직렬화의 함정
 
 | Item | 제목 | 상태 |
 |:----:|------|:----:|
@@ -241,243 +294,56 @@ enum과 애너테이션의 올바른 사용
 | **[Item 89](./chapter12/docs/item89.md)** | 인스턴스 수를 통제해야 한다면 readResolve보다는 열거 타입을 사용하라 | 📝 |
 | **[Item 90](./chapter12/docs/item90.md)** | 직렬화된 인스턴스 대신 직렬화 프록시 사용을 검토하라 | 📝 |
 
-**핵심**: JSON/Protocol Buffers, 직렬화 보안, 직렬화 프록시
+**핵심 키워드**: JSON/Protocol Buffers, 직렬화 보안, 직렬화 프록시
+
+[📂 Chapter 12 상세 보기](./chapter12/README.md)
+
+</details>
 
 ---
 
-## 🗺️ 학습 로드맵
+## 🚀 프로젝트 구조
 
-### 🎯 목적별 학습 경로
-
-<details>
-<summary><b>📘 입문자 (자바 기초는 아는 분)</b></summary>
-
-<br/>
-
-**1주차: 객체 생성의 기초**
 ```
-Chapter 2 (Item 1-3)
-✅ Item 2: 빌더 패턴
-→ 정적 팩터리 메서드
-→ 싱글턴 패턴
+effective-java/
+├── chapter02/              # 객체 생성과 파괴
+├── chapter03/              # 모든 객체의 공통 메서드
+├── chapter04/              # 클래스와 인터페이스
+├── chapter05/              # 제네릭
+├── chapter06/              # 열거 타입과 애너테이션
+├── chapter07/              # 람다와 스트림
+├── chapter08/              # 메서드
+├── chapter09/              # 일반적인 프로그래밍 원칙
+├── chapter10/              # 예외
+├── chapter11/              # 동시성
+├── chapter12/              # 직렬화
+│
+├── src/                   # 실행 가능한 예제 코드
+│   └── main/java/effectivejava/
+│
+└── README.md              # 메인 README (현재 파일)
 ```
-
-**2주차: 객체의 기본 메서드**
-```
-Chapter 3 (Item 10-14)
-→ equals/hashCode 규약
-→ toString 재정의
-→ Comparable 구현
-```
-
-**3주차: 클래스 설계 기초**
-```
-Chapter 4 (Item 15-20)
-→ 캡슐화와 접근 제어
-→ 불변 클래스
-→ 컴포지션 vs 상속
-```
-
-**4주차: 제네릭 기초**
-```
-Chapter 5 (Item 26-29)
-→ 로 타입 금지
-→ 제네릭 타입/메서드
-→ 한정적 와일드카드
-```
-
-</details>
-
-<details>
-<summary><b>💼 실무자 (바로 적용)</b></summary>
-
-<br/>
-
-**Week 1: 핵심 패턴**
-```
-✅ Item 2: 빌더 패턴 (완료)
-→ Item 1: 정적 팩터리
-→ Item 5: 의존 객체 주입
-→ Item 17: 불변 클래스
-```
-
-**Week 2: 제네릭 & 열거 타입**
-```
-→ Chapter 5: 제네릭 핵심
-→ Chapter 6: enum 활용
-→ Item 34-37: EnumSet/EnumMap
-```
-
-**Week 3: 람다 & 스트림**
-```
-→ Chapter 7: 함수형 프로그래밍
-→ Item 42-46: 람다와 스트림
-→ Item 48: 병렬 스트림 주의
-```
-
-**Week 4: 동시성 & 예외**
-```
-→ Chapter 10: 예외 처리
-→ Chapter 11: 동시성 유틸리티
-→ Item 78-81: 멀티스레딩
-```
-
-</details>
-
-<details>
-<summary><b>🏆 면접 준비</b></summary>
-
-<br/>
-
-**우선순위 1 (필수):**
-```
-✅ Item 2: 빌더 패턴
-→ Item 1: 정적 팩터리 vs 생성자
-→ Item 10/11: equals/hashCode 규약
-→ Item 17: 불변 객체의 장점
-→ Item 18: 컴포지션 vs 상속
-```
-
-**우선순위 2 (중요):**
-```
-→ Item 26: 로 타입 사용 금지 이유
-→ Item 28: 배열 vs 리스트
-→ Item 31: PECS 원칙
-→ Item 50: 방어적 복사
-→ Item 78: 동기화
-```
-
-**우선순위 3 (심화):**
-```
-→ Item 42: 람다 vs 익명 클래스
-→ Item 55: Optional 사용법
-→ Item 81: 동시성 유틸리티
-→ Item 87: 커스텀 직렬화
-```
-
-</details>
 
 ---
 
 ## 🎓 학습 방법
 
-### 📖 각 Item 학습 프로세스
+### 📖 추천 학습 순서
 
+#### 🔰 입문자
 ```
-1. 문제 상황 이해 → 2. 예제 코드 실행 → 3. AI와 깊이 파기 → 4. 실전 적용
-```
-
-### 1️⃣ 문서 읽기
-```
-- 왜 이 Item이 필요한가?
-- Before/After 코드 비교
-- 핵심 개념 파악
+Chapter 2 → Chapter 3 → Chapter 4 → Chapter 7
 ```
 
-### 2️⃣ 코드 실행
-```bash
-# 컴파일
-javac -d out -sourcepath src/main/java src/main/java/effectivejava/chapter2/item02/**/*.java
-
-# 실행
-java -cp out effectivejava.chapter2.item02.builder.NutritionFacts
+#### 💼 실무자
+```
+Chapter 2, 4, 5, 7, 8, 10, 11 집중 학습
 ```
 
-### 3️⃣ AI와 깊이 파기
+#### 🏆 면접 준비
 ```
-- 왜 이렇게 설계하는가?
-- 어떤 트레이드오프가 있는가?
-- 실전에서는 어떻게 적용하는가?
-```
-
-### 4️⃣ 실전 적용
-```
-- 자신의 프로젝트에 적용
-- 리팩토링 연습
-- 코드 리뷰에 활용
-```
-
----
-
-## 🚀 빠른 시작
-
-### 프로젝트 구조
-
-```
-effective-java/
-├── chapter02/              # Chapter 2: 객체 생성과 파괴
-│   ├── docs/
-│   │   ├── item01.md      # Item 1 문서
-│   │   ├── item02.md      # Item 2 문서 ✅
-│   │   └── ...
-│   └── README.md
-│
-├── src/main/java/effectivejava/
-│   └── chapter2/
-│       └── item02/        # Item 2 예제 코드
-│           ├── builder/
-│           ├── hierarchicalbuilder/
-│           ├── javabean/
-│           └── telescopingconstructor/
-│
-└── README.md              # 메인 README (현재 파일)
-```
-
-### 코드 실행하기
-
-```bash
-# 1. 컴파일
-mkdir -p out
-javac -d out -sourcepath src/main/java src/main/java/effectivejava/chapter2/item02/**/*.java
-
-# 2. 실행 - 빌더 패턴
-java -cp out effectivejava.chapter2.item02.builder.NutritionFacts
-
-# 3. 실행 - 계층적 빌더 패턴
-java -cp out effectivejava.chapter2.item02.hierarchicalbuilder.PizzaTest
-```
-
----
-
-## 📊 진행 상황
-
-### 전체 진행률
-
-```
-Chapter 2:  ████░░░░░░  1/9  (11%)
-Chapter 3:  ░░░░░░░░░░  0/5  (0%)
-Chapter 4:  ░░░░░░░░░░  0/11 (0%)
-Chapter 5:  ░░░░░░░░░░  0/8  (0%)
-Chapter 6:  ░░░░░░░░░░  0/8  (0%)
-Chapter 7:  ░░░░░░░░░░  0/7  (0%)
-Chapter 8:  ░░░░░░░░░░  0/8  (0%)
-Chapter 9:  ░░░░░░░░░░  0/12 (0%)
-Chapter 10: ░░░░░░░░░░  0/9  (0%)
-Chapter 11: ░░░░░░░░░░  0/7  (0%)
-Chapter 12: ░░░░░░░░░░  0/6  (0%)
-────────────────────────────────
-전체:       █░░░░░░░░░  1/90 (1%)
-```
-
-### 완료된 Items
-
-| Item | 제목 | 완료일 |
-|:----:|------|:------:|
-| ✅ **[Item 2](./chapter02/docs/item02.md)** | 생성자에 매개변수가 많다면 빌더를 고려하라 | 2026-02-03 |
-
----
-
-## 💡 핵심 원칙
-
-```
-Effective Java의 핵심은 단순히 문법을 아는 것이 아닌,
-"왜 이렇게 설계해야 하는지" 이해하는 것입니다
-
-- 불변성을 유지하라
-- 조합을 상속보다 선호하라
-- 인터페이스를 타입으로 사용하라
-- 실패를 빨리 감지하라
-- 방어적으로 복사하라
+Chapter 2-5: 필수
+Chapter 7, 8, 10, 11: 중요
 ```
 
 ---
@@ -485,12 +351,6 @@ Effective Java의 핵심은 단순히 문법을 아는 것이 아닌,
 ## 🤝 기여하기
 
 더 좋은 예제나 설명이 있다면 언제든 환영합니다!
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingItem`)
-3. Commit your changes (`git commit -m 'Add amazing example'`)
-4. Push to the branch (`git push origin feature/AmazingItem`)
-5. Open a Pull Request
 
 ---
 
