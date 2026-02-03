@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./images/cover.png" alt="Effective Java 3rd Edition" width="200"/>
+<img src="./images/cover.png" alt="Effective Java 3rd Edition" width="400"/>
 
 <br/>
 <br/>
