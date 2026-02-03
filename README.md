@@ -1,4 +1,8 @@
 <div align="center">
+  <img src="images/cover.png" alt="effective-java" width="300" />
+</div>
+
+<div align="center">
 
 # 📚 Effective Java 3/E 완전 정복
 
